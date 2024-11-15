@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลงทะเบียนฉีดวัคซีนป้องกันโควิด-19</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ลงทะเบียนฉีดวัคซีนป้องกันโควิด-19</h1>
+        
+        <div id="form-container">
+            <label for="firstName">ชื่อ:</label>
+            <input type="text" id="firstName" placeholder="กรอกชื่อ">
+            
+            <label for="lastName">นามสกุล:</label>
+            <input type="text" id="lastName" placeholder="กรอกนามสกุล">
+
+            <label for="idCard">เลขบัตรประชาชน:</label>
+            <input type="text" id="idCard" placeholder="x-xxxx-xxxxx-xx-x">
+
+            <label for="gender">เพศ:</label>
+            <select id="gender">
+                <option value="ชาย">ชาย</option>
+                <option value="หญิง">หญิง</option>
+            </select>
+
+            <label for="birthDate">วัน/เดือน/ปีเกิด:</label>
+            <input type="date" id="birthDate" max="">
+
+            <button onclick="confirmData()">ยืนยัน</button>
+            <button onclick="clearForm()">ล้างค่า</button>
+        </div>
+        
+        <div id="popup" class="popup">
+            <p>ยืนยันข้อมูล</p>
+            <button onclick="checkEligibility()">ตรวจสอบ</button>
+        </div>
+        
+        <div id="result-container" class="hidden">
+            <h2>ผลลัพธ์</h2>
+            <p id="result-name"></p>
+            <p id="result-idCard"></p>
+            <p id="result-gender"></p>
+            <p id="result-birthDate"></p>
+            <p id="result-status"></p>
+            <button onclick="goBack()">ย้อนกลับ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
